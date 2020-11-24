@@ -3,5 +3,5 @@ Quick install script for CodeAnywhere PHP Container. Quick download and install 
 
 ## Single Line Install
 ```
-curl https://raw.githubusercontent.com/jaredfhealy/codeanywhere-modx-install/main/ca-install.sh | sh
+wget https://raw.githubusercontent.com/jaredfhealy/codeanywhere-modx-install/main/ca-install.sh && chmod +x ca-install.sh && ./ca-install.sh
 ```
