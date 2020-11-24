@@ -39,6 +39,7 @@ sudo mysql -e "GRANT ALL PRIVILEGES on ${database}.* to '${database_user}'@'loca
 # Rename the htaccess files for rewriting friendly urls
 sudo su -c "mv ht.access .htaccess" -p www-data
 sudo su -c "mv manager/ht.access manager/.htaccess" -p www-data
+sudo su -c "mv core/ht.access core/.htaccess" -p www-data
 
 # Run the CLI installer
 read -p "Run the CLI Installer? [Y]: " cli
