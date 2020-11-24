@@ -54,6 +54,3 @@ then
     echo -e "--------------------------------------------------"
     sudo su -c "php setup/cli-install.php" -p www-data
 fi
-
-# Remove the install script
-rm ca-install.sh
