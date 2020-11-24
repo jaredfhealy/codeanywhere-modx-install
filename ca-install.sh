@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Prompt for version
+# Assumes the naming convention is consistent
 read -p "Enter a database name [2.8.1]: " version
 version=${version:-2.8.1}
 
