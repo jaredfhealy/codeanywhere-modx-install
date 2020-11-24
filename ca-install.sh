@@ -45,7 +45,7 @@ read -p "Run the CLI Installer? [Y]: " cli
 cli=${cli:-y}
 
 # If yes, run it
-if [ $cli -eq 'y' ] || [ $cli -eq 'Y' ]
+if [[ $cli -eq 'y' ]] || [[ $cli -eq 'Y' ]]
 then
     echo -e "--------------------------------------------------"
     echo -e "- Starting cli-install.php                       -"
