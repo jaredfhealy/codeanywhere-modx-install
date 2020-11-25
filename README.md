@@ -29,7 +29,7 @@ At point 3 above, the install script does the following:
 5. Unzip all files and move to the web root "workspace"
 6. Remove the temporary directory and zip file download
 7. Create the database, user, and grant privileges
-8. Rename the ht.access files to .htaccess in root, /core/ and /manager/ to allow frienly URLs and prevent core from being web accessible.
+8. Copy the ht.access files to .htaccess in root, /core/ and /manager/ to allow frienly URLs and prevent core from being web accessible.
 9. Prompt if you want to run the CLI install. If you hit enter to accept the default 'Y', it will proceed to the next step, otherwise we end here.
 10. Launch the included Modx cli-install.php process
     1. Enter the same values that you specified above for Database, Username, and Password.

@@ -36,10 +36,10 @@ sudo mysql -e "CREATE DATABASE ${database} CHARACTER SET utf8 COLLATE utf8_gener
 sudo mysql -e "CREATE USER '${database_user}'@'localhost' IDENTIFIED BY '$database_password';"
 sudo mysql -e "GRANT ALL PRIVILEGES on ${database}.* to '${database_user}'@'localhost';"
 
-# Rename the htaccess files for rewriting friendly urls
-sudo su -c "mv ht.access .htaccess" -p www-data
-sudo su -c "mv manager/ht.access manager/.htaccess" -p www-data
-sudo su -c "mv core/ht.access core/.htaccess" -p www-data
+# Copy the htaccess files for rewriting friendly urls
+sudo su -c "cp ht.access .htaccess" -p www-data
+sudo su -c "cp manager/ht.access manager/.htaccess" -p www-data
+sudo su -c "cp core/ht.access core/.htaccess" -p www-data
 
 # Run the CLI installer
 read -p "Run the CLI Installer? [Y]: " cli
