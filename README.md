@@ -35,3 +35,5 @@ At point 3 above, the install script does the following:
     1. Enter the same values that you specified above for Database, Username, and Password.
     2. Create the desired Admin username/password
     3. Accept default parameters or adjust as needed
+11. Set the default unmask value for apache2 to 002
+    1. This allows both the Codeanywhere editor and Modx to create and write to files since the cabox user is in the www-data group.
