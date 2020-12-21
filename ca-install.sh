@@ -53,4 +53,10 @@ then
     echo -e "- Enter the same db, user, password just created -"
     echo -e "--------------------------------------------------"
     sudo su -c "php setup/cli-install.php" -p www-data
+    
+    # Set the default unmask for apache so that both Modx and the Codeanywhere editor can write to files
+    sudo su -c "echo '' >> /etc/apache2/envvars" -p root
+    sudo su -c "echo '# umask 002 to create files with 0664 and folders with 0775' >> /etc/apache2/envvars" -p root
+    sudo su -c "echo 'umask 002' >> /etc/apache2/envvars" -p root
+    sudo service apache2 restart
 fi
