@@ -5,6 +5,9 @@
 read -p "Enter the MODX version to download [2.8.1]: " version
 version=${version:-2.8.1}
 
+read -p "Enter a patch level [pl]: " patch_level
+patch_level=${patch_level:-pl}
+
 # Create a database and user
 # Prompt the user for the database details
 read -p "Enter a database name [cabox]: " database
@@ -20,7 +23,7 @@ database_password=${database_password:-cabox}
 cd ~/workspace
 
 # Download the latest install
-wget https://modx.s3.amazonaws.com/releases/$version/modx-$version-pl.zip
+wget https://modx.s3.amazonaws.com/releases/$version/modx-$version-$patch_level.zip
 
 # Extract the zip file
 sudo su -c "unzip -q modx-$version-pl.zip -d temp" -p www-data
