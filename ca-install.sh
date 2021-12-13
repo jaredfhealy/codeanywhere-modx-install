@@ -19,17 +19,25 @@ database_user=${database_user:-cabox}
 read -p "Enter a database User Password [cabox]: " database_password
 database_password=${database_password:-cabox}
 
-# Make sure we're in workspace
-cd ~/workspace
+# Install in root workspace or current directory
+read -p "Install in root workspace? [Y]: " install_workspace
+install_workspace=${install_workspace:-Y}
+
+# If yes, run it
+if [[ $install_workspace -eq 'y' ]] || [[ $install_workspace -eq 'Y' ]]
+then
+    # Make sure we're in workspace
+    cd ~/workspace
+fi
 
 # Download the latest install
 wget https://modx.s3.amazonaws.com/releases/$version/modx-$version-$patch_level.zip
 
 # Extract the zip file
-sudo su -c "unzip -q modx-$version-pl.zip -d temp" -p www-data
+sudo su -c "unzip -q modx-$version-$patch_level.zip -d temp" -p www-data
 
 # Move the files to the current directory
-sudo su -c "mv temp/modx-$version-pl/* ./" -p www-data
+sudo su -c "mv temp/modx-$version-$patch_level/* ./" -p www-data
 
 # Remove the unneeded files
 rm -R temp/
